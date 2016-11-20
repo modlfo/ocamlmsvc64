@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+rm /usr/bin/link.exe
+
 # If a fork of these scripts is specified, use that GitHub user instead
 fork_user=${FORK_USER:-ocaml}
 
