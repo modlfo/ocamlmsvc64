@@ -52,5 +52,6 @@ case "$ocaml_system" in
     *)
         echo "ocamlc reports a dubious system: ${ocaml_system}. Good luck!" >&2
 esac
-opam install depext-cygwinports depext ocamlfind
 eval $(opam config env)
+opam install pla containers ppx_deriving
+
