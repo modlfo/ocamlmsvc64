@@ -61,6 +61,6 @@ make
 cd shared
 mkdir build
 cd build
-cmake ../
-make
+cmake ../ -G "NMake Makefiles"
+nmake
 
