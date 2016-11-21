@@ -54,4 +54,13 @@ case "$ocaml_system" in
 esac
 eval $(opam config env)
 opam install pla containers ppx_deriving ounit yojson
+git clone https://github.com/modlfo/vult.git
+cd vult
+./configure
+make
+cd shared
+mkdir build
+cd build
+cmake ../
+make
 
