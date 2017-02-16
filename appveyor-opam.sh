@@ -38,7 +38,7 @@ tar -xf "${OPAM_ARCH}.tar.xz"
 "${OPAM_ARCH}/install.sh"
 
 opam init -a default "https://github.com/modlfo/opam-repository-mingw.git" --comp "$SWITCH" --switch "$SWITCH" --root "C:\\ocaml"
-eval $(opam config env)
+eval $(opam config env --root "C:\\ocaml")
 ocaml_system="$(ocamlc -config | awk '/^system:/ { print $2 }')"
 case "$ocaml_system" in
     *mingw64*)
@@ -52,5 +52,5 @@ case "$ocaml_system" in
     *)
         echo "ocamlc reports a dubious system: ${ocaml_system}. Good luck!" >&2
 esac
-eval $(opam config env)
+eval $(opam config env --root "C:\\ocaml")
 opam install pla containers ppx_deriving ounit menhir yojson merlin --root "C:\\ocaml"
