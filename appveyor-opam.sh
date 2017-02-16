@@ -9,7 +9,7 @@ fork_user=${FORK_USER:-ocaml}
 fork_branch=${FORK_BRANCH:-master}
 
 # default setttings
-SWITCH=${OPAM_SWITCH:-'4.03.0+msvc64'}
+SWITCH=${OPAM_SWITCH:-'4.04.0+msvc64'}
 OPAM_URL='https://dl.dropboxusercontent.com/s/b2q2vjau7if1c1b/opam64.tar.xz'
 OPAM_ARCH=opam64
 
@@ -37,7 +37,7 @@ curl -fsSL -o "${OPAM_ARCH}.tar.xz" "${OPAM_URL}"
 tar -xf "${OPAM_ARCH}.tar.xz"
 "${OPAM_ARCH}/install.sh"
 
-opam init -a default "https://github.com/fdopen/opam-repository-mingw.git" --comp "$SWITCH" --switch "$SWITCH"
+opam init -a default "https://github.com/fdopen/opam-repository-mingw.git" --comp "$SWITCH" --switch "$SWITCH" --root "C:\\"
 eval $(opam config env)
 ocaml_system="$(ocamlc -config | awk '/^system:/ { print $2 }')"
 case "$ocaml_system" in
@@ -53,14 +53,4 @@ case "$ocaml_system" in
         echo "ocamlc reports a dubious system: ${ocaml_system}. Good luck!" >&2
 esac
 eval $(opam config env)
-opam install pla containers ppx_deriving ounit yojson
-git clone https://github.com/modlfo/vult.git
-cd vult
-./configure
-make
-cd shared
-mkdir build
-cd build
-cmake ../ -G "NMake Makefiles"
-nmake
-
+opam install pla containers ppx_deriving ounit menhir yojson --root "C:\\"
