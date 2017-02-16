@@ -1,2 +1,2 @@
 cd $APPVEYOR_BUILD_FOLDER
-7z a $APPVEYOR_BUILD_FOLDER/ocaml.zip "C:\ocaml" $APPVEYOR_BUILD_FOLDER/opam64
+7z a $APPVEYOR_BUILD_FOLDER/ocaml.zip "C:\ocaml"
