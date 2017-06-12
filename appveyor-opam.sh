@@ -54,3 +54,12 @@ case "$ocaml_system" in
 esac
 eval $(opam config env --root "C:\\ocaml")
 opam install pla containers ppx_deriving ounit menhir yojson merlin --root "C:\\ocaml"
+git clone https://github.com/modlfo/ollvm.git
+cd ollvm
+./configure
+make
+cd src/ollvm
+make install
+cd ../../../
+rm -rf ollvm
+cd $APPVEYOR_BUILD_FOLDER
