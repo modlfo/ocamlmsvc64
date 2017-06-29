@@ -53,7 +53,7 @@ case "$ocaml_system" in
         echo "ocamlc reports a dubious system: ${ocaml_system}. Good luck!" >&2
 esac
 eval $(opam config env --root "C:\\ocaml")
-opam install pla containers ppx_deriving ounit menhir yojson merlin qtest js_of_ocaml js_of_ocaml-ppx --root "C:\\ocaml"
+opam install pla containers ppx_deriving ounit menhir yojson merlin qtest --root "C:\\ocaml"
 git clone https://github.com/modlfo/ollvm.git
 cd ollvm
 ./configure
