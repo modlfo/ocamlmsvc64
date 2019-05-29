@@ -9,7 +9,7 @@ fork_user=${FORK_USER:-ocaml}
 fork_branch=${FORK_BRANCH:-master}
 
 # default setttings
-SWITCH=${OPAM_SWITCH:-'4.05.0+flambda+msvc64'}
+SWITCH=${OPAM_SWITCH:-'4.07.0+msvc64'}
 OPAM_URL='https://dl.dropboxusercontent.com/s/b2q2vjau7if1c1b/opam64.tar.xz'
 OPAM_ARCH=opam64
 
@@ -54,12 +54,4 @@ case "$ocaml_system" in
 esac
 eval $(opam config env --root "C:\\ocaml")
 opam install pla containers ppx_deriving ounit menhir yojson merlin qtest jbuilder ocaml-migrate-parsetree --root "C:\\ocaml"
-git clone https://github.com/modlfo/ollvm.git
-cd ollvm
-./configure
-make
-cd src/ollvm
-make install
-cd ../../../
-rm -rf ollvm
-cd $APPVEYOR_BUILD_FOLDER
+
