@@ -10,5 +10,6 @@ opam init default "git://github.com/fdopen/opam-repository-mingw.git#opam2" -c "
 eval $(opam config env --root "C:\\ocaml")
 
 opam install pla containers.2.8.1 ppx_deriving menhir yojson --root "C:\\ocaml" -y
-#opam install ounit merlin ocamlformat.0.15.0 qtest --root "C:\\ocaml" -y
-#opam pin add ocaml-lsp-server https://github.com/ocaml/ocaml-lsp.git --root "C:\\ocaml" -y
+opam pin add stdlib-shims --dev-repo --root "C:\\ocaml" -y
+opam install ounit merlin ocamlformat.0.15.0 qtest --root "C:\\ocaml" -y
+opam pin add ocaml-lsp-server https://github.com/ocaml/ocaml-lsp.git --root "C:\\ocaml" -y
