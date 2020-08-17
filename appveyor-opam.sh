@@ -6,9 +6,9 @@ wget https://github.com/fdopen/opam-repository-mingw/releases/download/0.0.0.2/o
 tar -xf 'opam64.tar.xz'
 bash opam64/install.sh
 
-opam init default "git://github.com/fdopen/opam-repository-mingw.git#opam2" -c "ocaml-variants.4.10.1+rc1+msvc64" --disable-sandboxing --no-setup --root "C:\\ocaml"
+opam init default "git://github.com/fdopen/opam-repository-mingw.git#opam2" -c "ocaml-variants.4.10.0+msvc64" --disable-sandboxing --no-setup --root "C:\\ocaml"
 eval $(opam config env --root "C:\\ocaml")
 
-opam install pla containers.2.8.1 ppx_deriving menhir yojson ounit --root "C:\\ocaml" -y
-opam install merlin ocamlformat.0.15.0 qtest --root "C:\\ocaml" -y
-opam pin add ocaml-lsp-server https://github.com/ocaml/ocaml-lsp.git --root "C:\\ocaml" -y
+opam install pla containers.2.8.1 ppx_deriving menhir yojson --root "C:\\ocaml" -y
+#opam install ounit merlin ocamlformat.0.15.0 qtest --root "C:\\ocaml" -y
+#opam pin add ocaml-lsp-server https://github.com/ocaml/ocaml-lsp.git --root "C:\\ocaml" -y
