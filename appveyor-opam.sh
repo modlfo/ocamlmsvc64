@@ -6,7 +6,7 @@ wget https://github.com/fdopen/opam-repository-mingw/releases/download/0.0.0.2/o
 tar -xf 'opam64.tar.xz'
 bash opam64/install.sh
 
-opam init default "git://github.com/fdopen/opam-repository-mingw.git#opam2" -c "ocaml-variants.4.09.1+msvc64" --disable-sandboxing --no-setup --root "C:\\ocaml"
+opam init default "git://github.com/fdopen/opam-repository-mingw.git#opam2" -c "ocaml-variants.4.11.0+msvc64" --disable-sandboxing --no-setup --root "C:\\ocaml"
 eval $(opam config env --root "C:\\ocaml")
 
 opam install pla containers.2.8.1 ppx_deriving menhir yojson --root "C:\\ocaml" -y
